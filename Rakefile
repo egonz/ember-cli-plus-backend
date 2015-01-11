@@ -45,7 +45,7 @@ task :deploy do
 
   sh 'git subtree push -P backend heroku master'
 
-  release_output = `heroku releases -a rails-html-ember-cli`.split "\n"
+  release_output = `heroku releases -a appname`.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`
